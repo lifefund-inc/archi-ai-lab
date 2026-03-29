@@ -1,0 +1,216 @@
+{
+  "tools": [
+    {
+      "label": "Gemini (Gems)",
+      "count": 55
+    },
+    {
+      "label": "Gemini",
+      "count": 33
+    },
+    {
+      "label": "NotebookLM",
+      "count": 13
+    },
+    {
+      "label": "ChatGPT",
+      "count": 10
+    },
+    {
+      "label": "Claude",
+      "count": 5
+    },
+    {
+      "label": "Google AI Studio",
+      "count": 3
+    },
+    {
+      "label": "Zapier",
+      "count": 3
+    },
+    {
+      "label": "ChatGPT (GPTs)",
+      "count": 1
+    },
+    {
+      "label": "MANUS",
+      "count": 1
+    },
+    {
+      "label": "GAMMA",
+      "count": 1
+    },
+    {
+      "label": "GAS",
+      "count": 1
+    }
+  ],
+  "phases": [
+    {
+      "label": "営業・追客",
+      "count": 13
+    },
+    {
+      "label": "集客・広報",
+      "count": 22
+    },
+    {
+      "label": "設計・デザイン",
+      "count": 18
+    },
+    {
+      "label": "積算・見積",
+      "count": 3
+    },
+    {
+      "label": "施工・現場",
+      "count": 10
+    },
+    {
+      "label": "引渡・アフター",
+      "count": 1
+    },
+    {
+      "label": "契約・ローン",
+      "count": 1
+    },
+    {
+      "label": "経営・戦略",
+      "count": 5
+    },
+    {
+      "label": "経理・財務",
+      "count": 2
+    },
+    {
+      "label": "組織・総務・人事",
+      "count": 4
+    },
+    {
+      "label": "開発・IT",
+      "count": 2
+    },
+    {
+      "label": "その他",
+      "count": 19
+    }
+  ],
+  "purposes": [
+    {
+      "label": "代筆・作成",
+      "count": 24
+    },
+    {
+      "label": "画像・動画・スライド",
+      "count": 24
+    },
+    {
+      "label": "相談・壁打ち",
+      "count": 11
+    },
+    {
+      "label": "その他",
+      "count": 9
+    },
+    {
+      "label": "要約・読解",
+      "count": 8
+    },
+    {
+      "label": "調査・検索",
+      "count": 8
+    },
+    {
+      "label": "校正・チェック",
+      "count": 6
+    },
+    {
+      "label": "技術・Excel",
+      "count": 5
+    },
+    {
+      "label": "学習・教育",
+      "count": 3
+    },
+    {
+      "label": "調査・確認",
+      "count": 1
+    },
+    {
+      "label": "開発・ツール作成",
+      "count": 1
+    }
+  ],
+  "departments": [
+    {
+      "label": "営業",
+      "count": 19
+    },
+    {
+      "label": "マーケティング",
+      "count": 19
+    },
+    {
+      "label": "施工管理",
+      "count": 17
+    },
+    {
+      "label": "設計",
+      "count": 15
+    },
+    {
+      "label": "経営企画",
+      "count": 8
+    },
+    {
+      "label": "不動産",
+      "count": 8
+    },
+    {
+      "label": "業務管理",
+      "count": 5
+    },
+    {
+      "label": "人事・総務",
+      "count": 5
+    },
+    {
+      "label": "インテリア",
+      "count": 3
+    },
+    {
+      "label": "技術統括",
+      "count": 1
+    }
+  ],
+  "timeSaved": [
+    {
+      "label": "1〜5分",
+      "count": 5
+    },
+    {
+      "label": "5〜15分",
+      "count": 13
+    },
+    {
+      "label": "15〜30分",
+      "count": 17
+    },
+    {
+      "label": "30分〜1時間",
+      "count": 14
+    },
+    {
+      "label": "1〜3時間",
+      "count": 21
+    },
+    {
+      "label": "3時間以上",
+      "count": 15
+    },
+    {
+      "label": "時間削減ではなく品質向上",
+      "count": 15
+    }
+  ]
+}

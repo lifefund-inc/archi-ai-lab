@@ -159,6 +159,10 @@
   ],
   "departments": [
     {
+      "label": "営業",
+      "count": 103
+    },
+    {
       "label": "マーケティング",
       "count": 68
     },
@@ -171,24 +175,12 @@
       "count": 57
     },
     {
-      "label": "PG｜アドバイザー課",
-      "count": 56
-    },
-    {
-      "label": "自社ブランド｜アドバイザー課",
-      "count": 28
-    },
-    {
       "label": "不動産",
       "count": 22
     },
     {
       "label": "経営企画",
       "count": 20
-    },
-    {
-      "label": "営業",
-      "count": 19
     },
     {
       "label": "人事・総務",

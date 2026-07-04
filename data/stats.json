@@ -1,28 +1,44 @@
 {
-  "totalCases": 100,
-  "totalDepartments": 10,
-  "totalTools": 11,
+  "totalCases": 391,
+  "totalDepartments": 13,
+  "totalTools": 16,
   "totalPhases": 12,
-  "estimatedAnnualHoursSaved": 5492,
+  "estimatedAnnualHoursSaved": 14864,
   "byTool": [
     {
-      "label": "Gemini (Gems)",
-      "count": 55
+      "label": "Claude Code",
+      "count": 134
+    },
+    {
+      "label": "Gemini Gems",
+      "count": 96
     },
     {
       "label": "Gemini",
-      "count": 33
-    },
-    {
-      "label": "NotebookLM",
-      "count": 13
-    },
-    {
-      "label": "ChatGPT",
-      "count": 10
+      "count": 76
     },
     {
       "label": "Claude",
+      "count": 69
+    },
+    {
+      "label": "NotebookLM",
+      "count": 34
+    },
+    {
+      "label": "Claude Cowork",
+      "count": 33
+    },
+    {
+      "label": "ChatGPT",
+      "count": 31
+    },
+    {
+      "label": "GAS",
+      "count": 6
+    },
+    {
+      "label": "Zapier",
       "count": 5
     },
     {
@@ -30,11 +46,15 @@
       "count": 3
     },
     {
-      "label": "Zapier",
-      "count": 3
+      "label": "ChatGPT (GPTs)",
+      "count": 2
     },
     {
-      "label": "ChatGPT (GPTs)",
+      "label": "Notion",
+      "count": 1
+    },
+    {
+      "label": "議事録作成ツール",
       "count": 1
     },
     {
@@ -42,88 +62,100 @@
       "count": 1
     },
     {
-      "label": "GAMMA",
+      "label": "Suno (音声・音楽)",
       "count": 1
     },
     {
-      "label": "GAS",
+      "label": "GAMMA",
       "count": 1
     }
   ],
   "byDepartment": [
     {
+      "label": "マーケティング",
+      "count": 68
+    },
+    {
+      "label": "施工管理",
+      "count": 64
+    },
+    {
+      "label": "設計",
+      "count": 57
+    },
+    {
+      "label": "PG｜アドバイザー課",
+      "count": 56
+    },
+    {
+      "label": "自社ブランド｜アドバイザー課",
+      "count": 28
+    },
+    {
+      "label": "不動産",
+      "count": 22
+    },
+    {
+      "label": "経営企画",
+      "count": 20
+    },
+    {
       "label": "営業",
       "count": 19
     },
     {
-      "label": "マーケティング",
+      "label": "人事・総務",
       "count": 19
     },
     {
-      "label": "施工管理",
+      "label": "インテリア",
       "count": 17
     },
     {
-      "label": "設計",
-      "count": 15
-    },
-    {
-      "label": "経営企画",
-      "count": 8
-    },
-    {
-      "label": "不動産",
-      "count": 8
-    },
-    {
       "label": "業務管理",
-      "count": 5
-    },
-    {
-      "label": "人事・総務",
-      "count": 5
-    },
-    {
-      "label": "インテリア",
-      "count": 3
+      "count": 13
     },
     {
       "label": "技術統括",
-      "count": 1
+      "count": 6
+    },
+    {
+      "label": "AI教育事業",
+      "count": 2
     }
   ],
   "byPhase": [
     {
       "label": "営業・追客",
-      "count": 13
+      "count": 60
     },
     {
       "label": "集客・広報",
-      "count": 22
+      "count": 76
     },
     {
       "label": "設計・デザイン",
-      "count": 18
+      "count": 51
     },
     {
       "label": "積算・見積",
-      "count": 3
+      "count": 19
     },
     {
       "label": "施工・現場",
-      "count": 10
+      "count": 32
     },
     {
       "label": "引渡・アフター",
-      "count": 1
+      "count": 5
     },
     {
       "label": "契約・ローン",
-      "count": 1
+      "count": 8
     },
     {
       "label": "経営・戦略",
-      "count": 5
+      "count": 17
     },
     {
       "label": "経理・財務",
@@ -131,91 +163,91 @@
     },
     {
       "label": "組織・総務・人事",
-      "count": 4
+      "count": 29
     },
     {
       "label": "開発・IT",
-      "count": 2
+      "count": 35
     },
     {
       "label": "その他",
-      "count": 19
+      "count": 57
     }
   ],
   "byPurpose": [
     {
-      "label": "代筆・作成",
-      "count": 24
-    },
-    {
       "label": "画像・動画・スライド",
-      "count": 24
+      "count": 82
     },
     {
-      "label": "相談・壁打ち",
-      "count": 11
+      "label": "代筆・作成",
+      "count": 78
+    },
+    {
+      "label": "技術・表計算ファイル",
+      "count": 68
     },
     {
       "label": "その他",
-      "count": 9
+      "count": 41
     },
     {
       "label": "要約・読解",
-      "count": 8
+      "count": 37
     },
     {
       "label": "調査・検索",
-      "count": 8
+      "count": 35
+    },
+    {
+      "label": "相談・壁打ち",
+      "count": 32
     },
     {
       "label": "校正・チェック",
-      "count": 6
-    },
-    {
-      "label": "技術・Excel",
-      "count": 5
+      "count": 11
     },
     {
       "label": "学習・教育",
-      "count": 3
+      "count": 6
     },
     {
-      "label": "調査・確認",
-      "count": 1
-    },
-    {
-      "label": "開発・ツール作成",
+      "label": "技術・開発",
       "count": 1
     }
   ],
   "byTimeSaved": [
     {
       "label": "1〜5分",
-      "count": 5
+      "count": 24
     },
     {
       "label": "5〜15分",
-      "count": 13
+      "count": 58
     },
     {
       "label": "15〜30分",
-      "count": 17
+      "count": 59
     },
     {
       "label": "30分〜1時間",
-      "count": 14
+      "count": 83
     },
     {
       "label": "1〜3時間",
-      "count": 21
+      "count": 87
     },
     {
       "label": "3時間以上",
-      "count": 15
+      "count": 38
     },
     {
       "label": "時間削減ではなく品質向上",
-      "count": 15
+      "count": 37
+    },
+    {
+      "label": "測定できない・不明",
+      "count": 5
     }
   ]
 }

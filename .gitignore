@@ -1,0 +1,11 @@
+# 内部ドキュメント（公開リポジトリに含めない）
+README.md
+HANDOVER.md
+
+# 作業用ファイル
+__pycache__/
+*.pyc
+
+# サイトで使わない作業用アセット
+assets/zoom_meet_background_*
+assets/usage_mockup_*

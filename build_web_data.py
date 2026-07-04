@@ -1,12 +1,19 @@
 """
-rewritten_100.json → cases.json, filters.json, stats.json 変換スクリプト
-Usage: py build_web_data.py
+AI事例100本ノックのJSON → cases.json, filters.json, stats.json 変換スクリプト。
+単体実行では入力JSONを必ず明示する。四半期マージは
+generate_2026q2_assets.py から transform_cases() を呼び出して行う。
 """
+import argparse
 import json
 import re
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.parent / "AI事例100本ノック" / "_data"
+DATA_DIR = (
+    Path(__file__).parent.parent.parent
+    / "社内AI推進"
+    / "AI事例100本ノック"
+    / "ソースデータ"
+)
 OUTPUT_DIR = Path(__file__).parent / "data"
 
 # ── フェーズ順序（建築業務の流れ） ──
@@ -25,6 +32,7 @@ TIME_SAVED_ORDER = [
     ("1〜3時間", 120),
     ("3時間以上", 240),
     ("時間削減ではなく品質向上", 0),
+    ("測定できない・不明", 0),
 ]
 
 # ── 頻度の年間回数中央値 ──
@@ -41,6 +49,9 @@ FREQ_MAP = {
 # ── 目的の正規化（画像・動画 → 画像・動画・スライド に統合） ──
 PURPOSE_NORMALIZE = {
     "画像・動画": "画像・動画・スライド",
+    "技術・Excel": "技術・表計算ファイル",
+    "調査・確認": "調査・検索",
+    "開発・ツール作成": "技術・開発",
 }
 
 # ── 部署名の一般化（社内名 → 一般名） ──
@@ -64,7 +75,15 @@ def extract_bracket(text: str) -> str:
 
 
 def normalize_tools(tool_str: str) -> list[str]:
-    return [t.strip() for t in tool_str.split(",") if t.strip()]
+    tools = []
+    seen = set()
+    for tool in (t.strip() for t in tool_str.split(",") if t.strip()):
+        key = tool.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        tools.append(tool)
+    return tools
 
 
 def build_search_index(case: dict) -> str:
@@ -78,7 +97,6 @@ def build_search_index(case: dict) -> str:
         case.get("solution", ""),
         case.get("result", ""),
         case.get("voice", ""),
-        case.get("promptFull", ""),
     ]
     text = " ".join(fields).lower()
     text = re.sub(r"[【】「」『』（）()\[\]]", " ", text)
@@ -124,6 +142,7 @@ def transform_cases(raw_data: list) -> list[dict]:
             "resultSub": r.get("result_sub", ""),
             "voice": r.get("voice", ""),
             "promptFull": item.get("prompt_full", ""),
+            "promptSource": item.get("prompt_source", item.get("promptSource", "original")),
             "hasPrompt": len(item.get("prompt_full", "")) >= 50,
         }
         case_obj["_searchIndex"] = build_search_index(case_obj)
@@ -202,12 +221,25 @@ def build_stats(cases: list[dict]) -> dict:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="AIラボ用Webデータ生成")
+    parser.add_argument("--input", required=True, help="変換元JSON（rewritten_100系）")
+    args = parser.parse_args()
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    with open(DATA_DIR / "rewritten_100.json", "r", encoding="utf-8") as f:
+    input_path = Path(args.input)
+    with open(input_path, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
 
     cases = transform_cases(raw_data)
+    existing_cases_path = OUTPUT_DIR / "cases.json"
+    if existing_cases_path.exists():
+        existing_count = len(json.loads(existing_cases_path.read_text(encoding="utf-8")))
+        if len(cases) < existing_count:
+            raise RuntimeError(
+                f"既存cases.json({existing_count}件)より入力結果({len(cases)}件)が少ないため中断しました。"
+                "四半期追加は generate_2026q2_assets.py の --lab-dir 付き実行で行ってください。"
+            )
     filters = build_filters(cases)
     stats = build_stats(cases)
 

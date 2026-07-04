@@ -420,7 +420,7 @@ a{color:inherit;text-decoration:none}
       <div class="search-row">
         <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <input type="text" class="search-input" placeholder="キーワードで事例を検索（例: Gemini 営業 議事録）"
-          x-model.debounce.150ms="search" @input="applyFilters()" @keydown.enter.prevent="applyFilters()">
+          x-model="search" @input.debounce.150ms="applyFilters()" @keydown.enter.prevent="applyFilters()">
         <button class="search-clear" x-show="search.length>0" @click="clearSearch()">&times;</button>
       </div>
 
@@ -621,7 +621,7 @@ a{color:inherit;text-decoration:none}
       <img src="assets/logo_transparent.png" alt="" class="footer-logo">
       <span class="footer-name">建築AIラボ</span>
     </div>
-    <div class="footer-sub">建築AI経営研究会 ナレッジプラットフォーム &mdash; powered by LIFEFUND</div>
+    <div class="footer-sub">建築AI経営研究会 ナレッジプラットフォーム</div>
   </footer>
 
 </div>
@@ -649,7 +649,7 @@ function app(){
       ]);
       this.cases=c;this.filters=f;this.stats=s;
       try{this.likes=JSON.parse(localStorage.getItem('archilab-likes')||'{}')}catch{this.likes={}}
-      // Header scroll hide/show (ARRCH style)
+      // Header scroll hide/show
       let prevY=0;const bd=document.body;const cls='scroll-down';
       const headerEl=document.querySelector('.header');
       // Set spacer height to match header

@@ -2,54 +2,74 @@
   "tools": [
     {
       "label": "Claude Code",
-      "count": 134
+      "count": 131
     },
     {
       "label": "Gemini Gems",
-      "count": 96
+      "count": 89
     },
     {
       "label": "Gemini",
-      "count": 76
+      "count": 73
     },
     {
       "label": "Claude",
-      "count": 69
+      "count": 70
     },
     {
       "label": "NotebookLM",
-      "count": 34
-    },
-    {
-      "label": "Claude Cowork",
       "count": 33
     },
     {
-      "label": "ChatGPT",
+      "label": "Claude Cowork",
       "count": 31
     },
     {
-      "label": "GAS",
-      "count": 6
+      "label": "ChatGPT",
+      "count": 30
     },
     {
       "label": "Zapier",
       "count": 5
     },
     {
-      "label": "Google AI Studio",
+      "label": "GAS",
+      "count": 4
+    },
+    {
+      "label": "Google Apps Script",
       "count": 3
     },
     {
-      "label": "ChatGPT (GPTs)",
+      "label": "Excel",
       "count": 2
     },
     {
-      "label": "Notion",
+      "label": "Google AI Studio",
+      "count": 2
+    },
+    {
+      "label": "Google Calendar",
+      "count": 2
+    },
+    {
+      "label": "ChatGPT (GPTs)",
       "count": 1
     },
     {
-      "label": "議事録作成ツール",
+      "label": "ChatGPT GPTs",
+      "count": 1
+    },
+    {
+      "label": "Chatwork",
+      "count": 1
+    },
+    {
+      "label": "GA4",
+      "count": 1
+    },
+    {
+      "label": "GAMMA",
       "count": 1
     },
     {
@@ -57,122 +77,142 @@
       "count": 1
     },
     {
+      "label": "Microsoft PowerPoint",
+      "count": 1
+    },
+    {
+      "label": "Notion",
+      "count": 1
+    },
+    {
+      "label": "PowerPoint",
+      "count": 1
+    },
+    {
       "label": "Suno (音声・音楽)",
       "count": 1
     },
     {
-      "label": "GAMMA",
+      "label": "Word",
+      "count": 1
+    },
+    {
+      "label": "Zoho CRM",
+      "count": 1
+    },
+    {
+      "label": "python-pptx",
+      "count": 1
+    },
+    {
+      "label": "議事録作成ツール",
       "count": 1
     }
   ],
   "phases": [
     {
-      "label": "営業・追客",
-      "count": 60
+      "label": "集客・広報",
+      "count": 71
     },
     {
-      "label": "集客・広報",
-      "count": 76
+      "label": "営業・追客",
+      "count": 62
     },
     {
       "label": "設計・デザイン",
-      "count": 51
+      "count": 48
     },
     {
-      "label": "積算・見積",
-      "count": 19
+      "label": "その他",
+      "count": 47
+    },
+    {
+      "label": "開発・IT",
+      "count": 36
     },
     {
       "label": "施工・現場",
-      "count": 32
+      "count": 31
     },
     {
-      "label": "引渡・アフター",
-      "count": 5
-    },
-    {
-      "label": "契約・ローン",
-      "count": 8
+      "label": "組織・総務・人事",
+      "count": 28
     },
     {
       "label": "経営・戦略",
-      "count": 17
+      "count": 20
+    },
+    {
+      "label": "積算・見積",
+      "count": 16
+    },
+    {
+      "label": "契約・ローン",
+      "count": 10
+    },
+    {
+      "label": "引渡・アフター",
+      "count": 6
     },
     {
       "label": "経理・財務",
       "count": 2
-    },
-    {
-      "label": "組織・総務・人事",
-      "count": 29
-    },
-    {
-      "label": "開発・IT",
-      "count": 35
-    },
-    {
-      "label": "その他",
-      "count": 57
     }
   ],
   "purposes": [
     {
       "label": "画像・動画・スライド",
-      "count": 82
+      "count": 79
     },
     {
       "label": "代筆・作成",
-      "count": 78
+      "count": 71
     },
     {
       "label": "技術・表計算ファイル",
-      "count": 68
+      "count": 69
     },
     {
       "label": "その他",
-      "count": 41
+      "count": 39
     },
     {
       "label": "要約・読解",
-      "count": 37
+      "count": 36
     },
     {
       "label": "調査・検索",
-      "count": 35
+      "count": 34
     },
     {
       "label": "相談・壁打ち",
-      "count": 32
+      "count": 30
     },
     {
       "label": "校正・チェック",
-      "count": 11
+      "count": 14
     },
     {
       "label": "学習・教育",
-      "count": 6
-    },
-    {
-      "label": "技術・開発",
-      "count": 1
+      "count": 5
     }
   ],
   "departments": [
     {
       "label": "営業",
-      "count": 103
+      "count": 105
     },
     {
       "label": "マーケティング",
-      "count": 68
+      "count": 66
     },
     {
       "label": "施工管理",
-      "count": 64
+      "count": 63
     },
     {
       "label": "設計",
-      "count": 57
+      "count": 56
     },
     {
       "label": "不動産",
@@ -180,15 +220,15 @@
     },
     {
       "label": "経営企画",
-      "count": 20
-    },
-    {
-      "label": "人事・総務",
-      "count": 19
+      "count": 16
     },
     {
       "label": "インテリア",
-      "count": 17
+      "count": 15
+    },
+    {
+      "label": "人事・総務",
+      "count": 14
     },
     {
       "label": "業務管理",
@@ -196,7 +236,7 @@
     },
     {
       "label": "技術統括",
-      "count": 6
+      "count": 5
     },
     {
       "label": "AI教育事業",
@@ -205,36 +245,36 @@
   ],
   "timeSaved": [
     {
-      "label": "1〜5分",
-      "count": 24
-    },
-    {
-      "label": "5〜15分",
-      "count": 58
-    },
-    {
-      "label": "15〜30分",
-      "count": 59
+      "label": "1〜3時間",
+      "count": 86
     },
     {
       "label": "30分〜1時間",
-      "count": 83
+      "count": 82
     },
     {
-      "label": "1〜3時間",
-      "count": 87
+      "label": "15〜30分",
+      "count": 57
+    },
+    {
+      "label": "5〜15分",
+      "count": 57
     },
     {
       "label": "3時間以上",
-      "count": 38
+      "count": 34
     },
     {
       "label": "時間削減ではなく品質向上",
-      "count": 37
+      "count": 34
+    },
+    {
+      "label": "1〜5分",
+      "count": 23
     },
     {
       "label": "測定できない・不明",
-      "count": 5
+      "count": 4
     }
   ]
 }

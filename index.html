@@ -388,6 +388,76 @@ a{color:inherit;text-decoration:none}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:3px}
+
+
+/* Mobile layout keeps the brand and primary controls inside the viewport. */
+@media(max-width:560px){
+  .header{padding:8px 14px}
+  .header-inner{justify-content:flex-start}
+  .header-brand{gap:10px;min-width:0;width:100%}
+  .header-logo{height:52px;flex:0 0 auto}
+  .header-texts{display:grid;grid-template-columns:minmax(0,1fr);gap:0;min-width:0}
+  .header-name-main{font-size:24px;line-height:1.25;letter-spacing:0;white-space:nowrap}
+  .header-name-sub{font-size:9px;line-height:1.3;letter-spacing:0.12em;white-space:nowrap}
+  .header-divider{display:none}
+  .header-desc{font-size:10px;line-height:1.4;white-space:nowrap}
+  .search-zone{padding:12px 14px 10px}
+  .search-input{padding-right:40px;font-size:14px}
+  .filter-toggles{gap:6px}
+  .ftoggle,.btn-toggle-all{flex-shrink:0}
+  .ftoggle{padding:6px 12px;font-size:12px}
+  .filter-divider{display:none}
+  .result-text{margin-left:0;width:100%;text-align:right}
+  .view-bar{padding:12px 14px 0;gap:8px;flex-wrap:wrap}
+  .view-btn{padding:6px 10px}
+  .sort-select{max-width:145px}
+  .cards-section{padding:12px 14px 40px}
+}
+
+
+/* Print-all mode uses the same case fields and visual hierarchy as the HTML detail view. */
+.print-casebook{display:none}
+body.print-all{background:var(--white)}
+body.print-all .header,
+body.print-all .header-spacer,
+body.print-all .search-zone,
+body.print-all .view-bar,
+body.print-all .cards-section,
+body.print-all .modal-overlay,
+body.print-all .footer{display:none!important}
+body.print-all .print-casebook{display:block}
+.print-cover{min-height:100vh;padding:15mm 14mm;display:flex;flex-direction:column;justify-content:space-between;background:var(--white);break-after:page;page-break-after:always}
+.print-cover-logo{width:58mm;height:auto;align-self:flex-end}
+.print-cover-kicker{font-size:13px;font-weight:800;color:var(--teal);margin-bottom:5mm}
+.print-cover-title{font-size:34px;line-height:1.35;font-weight:900;color:var(--gray-800);margin:0 0 4mm}
+.print-cover-desc{font-size:15px;line-height:1.8;color:var(--gray-600);max-width:145mm}
+.print-cover-meta{padding-top:6mm;border-top:2px solid var(--teal);display:flex;justify-content:space-between;align-items:end;gap:8mm;font-size:12px;color:var(--gray-500)}
+.print-case{break-before:page;page-break-before:always;padding:10mm 11mm 9mm;background:var(--white);color:var(--gray-800)}
+.print-case-head{border-bottom:2px solid var(--teal);padding-bottom:4mm;margin-bottom:5mm}
+.print-case-num{font-family:'Inter',sans-serif;font-size:11px;font-weight:800;color:var(--teal);margin-bottom:2mm}
+.print-case-title{font-size:22px;line-height:1.45;font-weight:900;margin:0 0 3mm}
+.print-case-tags{display:flex;flex-wrap:wrap;gap:2mm}
+.print-section{margin:0 0 4mm;break-inside:avoid-page;page-break-inside:avoid}
+.print-section-label{display:inline-block;min-width:26mm;padding:1.8mm 3mm;color:var(--white);font-size:12px;font-weight:800;text-align:center;margin-bottom:2mm}
+.print-section-label.challenge{background:var(--teal)}
+.print-section-label.solution{background:var(--orange)}
+.print-section-label.outcome{background:var(--green)}
+.print-section-main{font-size:12.5px;line-height:1.85;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.print-section-sub{font-size:10.5px;line-height:1.7;color:var(--gray-600);background:var(--gray-50);border-left:2px solid var(--gray-300);padding:2mm 3mm;margin:2mm 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.print-voice{font-size:11px;line-height:1.75;background:var(--gray-800);color:var(--white);padding:3mm 4mm;margin:4mm 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.print-prompt{margin-top:4mm;border:1px solid var(--gray-200);background:var(--gray-50);padding:3mm 4mm;break-inside:auto;page-break-inside:auto}
+.print-prompt-label{font-size:11px;font-weight:800;color:var(--teal-dark);margin-bottom:2mm}
+.print-prompt pre{font-family:'Noto Sans JP',sans-serif;font-size:9.5px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;margin:0}
+.print-meta{display:flex;flex-wrap:wrap;gap:2mm 5mm;border-top:1px solid var(--gray-200);padding-top:3mm;margin-top:4mm;font-size:9.5px;color:var(--gray-500)}
+@page{size:A4;margin:0}
+@media print{
+  html,body{width:210mm;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.print-all .print-casebook{display:block!important}
+  .print-cover{min-height:297mm}
+  .print-case{min-height:297mm}
+  .print-case:last-child{break-after:auto;page-break-after:auto}
+}
+
 </style>
 </head>
 <body>
@@ -598,7 +668,7 @@ a{color:inherit;text-decoration:none}
           <div class="prompt-block" x-show="selected.hasPrompt">
             <button class="prompt-toggle" @click="promptOpen=!promptOpen">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-              <span x-text="promptOpen?'プロンプトを閉じる':'プロンプトを見る'"></span>
+              <span x-text="promptOpen?'プロンプトを閉じる':(['original','author_submitted_redacted'].includes(selected.promptSource)?'この事例で使用したプロンプトを見る':'この事例で使える実践テンプレートを見る')"></span>
             </button>
             <div x-show="promptOpen" x-transition>
               <pre class="prompt-content" x-text="selected.promptFull"></pre>
@@ -614,6 +684,63 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
   </template>
+
+
+
+  <!-- Same-document print mode: open index.html?print=all to render every case. -->
+  <section class="print-casebook" x-show="printMode">
+    <div class="print-cover">
+      <img src="assets/logo_transparent.png" alt="建築AIラボ" class="print-cover-logo">
+      <div>
+        <div class="print-cover-kicker">建築AI経営研究会 ナレッジプラットフォーム</div>
+        <h1 class="print-cover-title">建築AIラボ<br>AI活用事例集</h1>
+        <p class="print-cover-desc">建築会社の実務で使われたAI活用事例を、課題、解決策、成果、実践テンプレートの順で収録しています。</p>
+      </div>
+      <div class="print-cover-meta">
+        <span x-text="cases.length + '事例'">事例集</span>
+        <span>2026年 第2四半期版</span>
+      </div>
+    </div>
+    <template x-for="item in cases" :key="'print-'+item.id">
+      <article class="print-case">
+        <header class="print-case-head">
+          <div class="print-case-num" x-text="'AI LAB #'+String(item.id).padStart(3,'0')"></div>
+          <h2 class="print-case-title" x-text="item.title"></h2>
+          <div class="print-case-tags">
+            <template x-for="tool in item.tools" :key="'pt-'+item.id+'-'+tool"><span class="tag tag-tool" x-text="tool"></span></template>
+            <span class="tag tag-phase" x-text="item.phaseDisplay"></span>
+            <span class="tag tag-dept" x-text="item.department"></span>
+          </div>
+        </header>
+        <section class="print-section">
+          <div class="print-section-label challenge">課題</div>
+          <p class="print-section-main" x-text="item.problem"></p>
+          <p class="print-section-sub" x-text="item.problemSub"></p>
+        </section>
+        <section class="print-section">
+          <div class="print-section-label solution">解決策</div>
+          <p class="print-section-main" x-text="item.solution"></p>
+          <p class="print-section-sub" x-text="item.solutionSub"></p>
+        </section>
+        <section class="print-section">
+          <div class="print-section-label outcome">成果</div>
+          <p class="print-section-main" x-text="item.result"></p>
+          <p class="print-section-sub" x-text="item.resultSub"></p>
+        </section>
+        <div class="print-voice" x-show="item.voice"><strong>利用者の声</strong><br><span x-text="item.voice"></span></div>
+        <section class="print-prompt" x-show="item.hasPrompt">
+          <div class="print-prompt-label" x-text="['original','author_submitted_redacted'].includes(item.promptSource)?'この事例で使用したプロンプト':'この事例で使える実践テンプレート'"></div>
+          <pre x-text="item.promptFull"></pre>
+        </section>
+        <div class="print-meta">
+          <span x-text="'削減: '+item.timeSavedDisplay"></span>
+          <span x-text="'頻度: '+item.frequency"></span>
+          <span x-text="'目的: '+item.purposeDisplay"></span>
+        </div>
+      </article>
+    </template>
+  </section>
+
 
   <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
@@ -632,7 +759,7 @@ function app(){
     cases:[],filteredCases:[],
     filters:{tools:[],phases:[],purposes:[],departments:[],timeSaved:[]},
     stats:{},search:'',sortKey:'phase',
-    selected:null,modalOpen:false,promptOpen:false,copyLabel:'コピー',displayCount:0,viewMode:'grid',likes:{},
+    selected:null,modalOpen:false,promptOpen:false,copyLabel:'コピー',displayCount:0,viewMode:'grid',likes:{},printMode:false,
     openPanels:['tools','phases','purposes','departments','timeSaved'],filtersExpanded:true,scrollY:0,lastScrollY:0,headerHidden:false,
     activeFilters:{tools:[],phases:[],purposes:[],departments:[],timeSaved:[]},
     filterAxes:[
@@ -647,7 +774,7 @@ function app(){
         fetch('data/filters.json').then(r=>r.json()),
         fetch('data/stats.json').then(r=>r.json()),
       ]);
-      this.cases=c;this.filters=f;this.stats=s;
+      this.cases=c;this.filters=f;this.stats=s;if(window.matchMedia('(max-width:640px)').matches){this.openPanels=[];this.filtersExpanded=false;}document.documentElement.dataset.printReady='true';
       try{this.likes=JSON.parse(localStorage.getItem('archilab-likes')||'{}')}catch{this.likes={}}
       // Header scroll hide/show
       let prevY=0;const bd=document.body;const cls='scroll-down';
@@ -684,6 +811,7 @@ function app(){
       }
       if(this.sortKey!=='phase') p.set('sort',this.sortKey);
       if(this.viewMode!=='grid') p.set('view',this.viewMode);
+      if(this.printMode) p.set('print','all');
       const qs=p.toString();
       const url=qs?'?'+qs:location.pathname;
       history.replaceState(null,'',url);
@@ -697,6 +825,8 @@ function app(){
       }
       this.sortKey=p.get('sort')||'phase';
       this.viewMode=p.get('view')||'grid';
+      this.printMode=p.get('print')==='all';
+      document.body.classList.toggle('print-all',this.printMode);
     },
 
     // Section headers for phase sort
